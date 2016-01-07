@@ -406,7 +406,7 @@ var init={"0":{"items":[{"id":11,"duration":150,"t":0,"l":1,"w":100,"h":50,"x":9
 		}
 	};
 	
-	$.ajax("html.php").done(function(result){
+	$.ajax("html.html").done(function(result){
 		$("body").append(result);
 		$.fn.w.init("#canvas");
 	});
