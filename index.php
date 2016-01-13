@@ -29,6 +29,7 @@
 				<div>
 					<a href="#">next</a>
 				</div>
+				<div id="dvstatus">40</div>
 				<canvas id="canvas" width="650px" height="500px"></canvas>
 			</div>
 
@@ -128,7 +129,7 @@ var b_arr=[];
 			result=result+hobj(resultado.charAt(i)).d.toString();
 		}
 		b_arr=decode(result);
-		
+		//clearInterval(inn);
 	}
 	function decode(resultado)
 	{
@@ -213,7 +214,11 @@ var b_arr=[];
 		rr.push(a1);
 		return rr;
 	}
+var inn;
 (function ( $ ) {
+	/*inn=window.setInterval(function(){ 
+		$("#dvstatus").html(parseInt($("#dvstatus").html())-1);
+	}, 1000);*/
 	$.fn.w = {
 		init:function(elem,value){
 			if(value===undefined)
@@ -229,7 +234,7 @@ var b_arr=[];
 				lastimg:null,
 				newimg:null
 			};
-			this.load_palette("#dv input",value);
+			//this.load_palette("#dv input",value);
 		},
 		load_palette:function(index,value){
 			if(value===undefined)
@@ -240,10 +245,7 @@ var b_arr=[];
 					});
 				}).parent().remove();*/
 				doble_decode();
-				/*r_arr=$($("#dv div")[0]).text().split(",");
-				g_arr=$($("#dv div")[1]).text().split(",");
-				b_arr=$($("#dv div")[2]).text().split(",");*/
-				//$("#dv").remove();
+				$("#dv").remove();
 				for (var i = 0; i < r_arr.length; i++) 
 				{
 					$.fn.w.img.push(parseInt(r_arr[i]));
